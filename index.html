@@ -5,46 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa de Comidas - Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="app-container">
         <!-- NAVEGACIÓN LATERAL -->
         <nav class="sidebar">
-            <div class="sidebar-header">
-                <h2 class="business-name">Casa de Comidas</h2>
+            <div class="sidebar-top">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
             
             <ul class="sidebar-menu">
-                <li><a href="#" data-section="dashboard" class="menu-link active">Dashboard</a></li>
-                <li><a href="#" data-section="pedidos" class="menu-link">Pedidos</a></li>
-                <li><a href="#" data-section="menus" class="menu-link">Menús</a></li>
-                <li><a href="#" data-section="contabilidad" class="menu-link">Contabilidad</a></li>
-                <li><a href="#" data-section="ajustes" class="menu-link">Ajustes</a></li>
+                <li>
+                    <a href="#" data-section="dashboard" class="menu-link active" title="Dashboard">
+                        <i class="fas fa-chart-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="pedidos" class="menu-link" title="Pedidos">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="menus" class="menu-link" title="Menús">
+                        <i class="fas fa-utensils"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="contabilidad" class="menu-link" title="Contabilidad">
+                        <i class="fas fa-calculator"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="ajustes" class="menu-link" title="Ajustes">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                </li>
             </ul>
+
+            <div class="sidebar-bottom">
+                <a href="#" class="sidebar-user">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="#" class="sidebar-help">
+                    <i class="fas fa-question-circle"></i>
+                </a>
+            </div>
         </nav>
 
         <!-- CONTENIDO PRINCIPAL -->
         <main class="main-content">
+            <!-- HEADER -->
+            <header class="header">
+                <div class="header-title">
+                    <h1>Casa de Comidas</h1>
+                </div>
+            </header>
+
             <!-- DASHBOARD SECTION -->
             <section id="dashboard" class="section active">
-                <h1>Dashboard</h1>
-                
                 <!-- TARJETAS DE RESUMEN -->
                 <div class="summary-cards">
-                    <div class="card">
+                    <div class="card card-large">
                         <p class="card-label">Ingresos del día</p>
                         <p class="card-value">$0</p>
+                        <p class="card-meta">+0% vs ayer</p>
                     </div>
                     <div class="card">
-                        <p class="card-label">Pedidos realizados</p>
+                        <p class="card-label">Pedidos</p>
                         <p class="card-value">0</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Promedio por pedido</p>
+                        <p class="card-value">$0</p>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN DE GRÁFICOS -->
+                <div class="charts-section">
+                    <!-- GRÁFICO CIRCULAR -->
+                    <div class="card card-chart">
+                        <p class="card-label">Platos más vendidos</p>
+                        <div style="position: relative; width: 100%; height: 240px; margin-top: 16px;">
+                            <canvas id="topDishesChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- GRÁFICO DE LÍNEA -->
+                    <div class="card card-chart">
+                        <p class="card-label">Ingresos por hora</p>
+                        <div style="position: relative; width: 100%; height: 240px; margin-top: 16px;">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
                     </div>
                 </div>
 
                 <!-- HISTORIAL DE PEDIDOS -->
-                <div class="section-container">
-                    <h2>Pedidos del día</h2>
-                    <div id="orders-list" class="orders-list">
+                <div class="card card-full">
+                    <p class="card-label">Historial del día</p>
+                    <div id="orders-list" class="orders-list" style="margin-top: 16px;">
                         <p class="empty-state">No hay pedidos aún</p>
                     </div>
                 </div>
@@ -52,32 +113,32 @@
 
             <!-- PEDIDOS SECTION -->
             <section id="pedidos" class="section">
-                <h1>Gestionar Pedidos</h1>
-                <div class="section-container">
+                <h2>Gestionar Pedidos</h2>
+                <div class="card card-full">
                     <p>Sección de Pedidos (próximamente)</p>
                 </div>
             </section>
 
             <!-- MENÚS SECTION -->
             <section id="menus" class="section">
-                <h1>Gestionar Menú</h1>
-                <div class="section-container">
+                <h2>Gestionar Menú</h2>
+                <div class="card card-full">
                     <p>Sección de Menús (próximamente)</p>
                 </div>
             </section>
 
             <!-- CONTABILIDAD SECTION -->
             <section id="contabilidad" class="section">
-                <h1>Contabilidad</h1>
-                <div class="section-container">
+                <h2>Contabilidad</h2>
+                <div class="card card-full">
                     <p>Sección de Contabilidad (próximamente)</p>
                 </div>
             </section>
 
             <!-- AJUSTES SECTION -->
             <section id="ajustes" class="section">
-                <h1>Ajustes</h1>
-                <div class="section-container">
+                <h2>Ajustes</h2>
+                <div class="card card-full">
                     <p>Sección de Ajustes (próximamente)</p>
                 </div>
             </section>
@@ -87,6 +148,9 @@
     <!-- Scripts de Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     
     <!-- Nuestros scripts -->
     <script src="config.js"></script>
