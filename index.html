@@ -3,14 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa de Comidas - App</title>
+    <title>Casa de Comidas - Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Casa de Comidas - Gestión de Pedidos</h1>
-    <p>App conectada a Firebase</p>
+    <div class="app-container">
+        <!-- NAVEGACIÓN LATERAL -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="business-name">Casa de Comidas</h2>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="#" data-section="dashboard" class="menu-link active">Dashboard</a></li>
+                <li><a href="#" data-section="pedidos" class="menu-link">Pedidos</a></li>
+                <li><a href="#" data-section="menus" class="menu-link">Menús</a></li>
+                <li><a href="#" data-section="contabilidad" class="menu-link">Contabilidad</a></li>
+                <li><a href="#" data-section="ajustes" class="menu-link">Ajustes</a></li>
+            </ul>
+        </nav>
 
-        <!-- Scripts de Firebase (versión compatible) -->
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <!-- DASHBOARD SECTION -->
+            <section id="dashboard" class="section active">
+                <h1>Dashboard</h1>
+                
+                <!-- TARJETAS DE RESUMEN -->
+                <div class="summary-cards">
+                    <div class="card">
+                        <p class="card-label">Ingresos del día</p>
+                        <p class="card-value">$0</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Pedidos realizados</p>
+                        <p class="card-value">0</p>
+                    </div>
+                </div>
+
+                <!-- HISTORIAL DE PEDIDOS -->
+                <div class="section-container">
+                    <h2>Pedidos del día</h2>
+                    <div id="orders-list" class="orders-list">
+                        <p class="empty-state">No hay pedidos aún</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PEDIDOS SECTION -->
+            <section id="pedidos" class="section">
+                <h1>Gestionar Pedidos</h1>
+                <div class="section-container">
+                    <p>Sección de Pedidos (próximamente)</p>
+                </div>
+            </section>
+
+            <!-- MENÚS SECTION -->
+            <section id="menus" class="section">
+                <h1>Gestionar Menú</h1>
+                <div class="section-container">
+                    <p>Sección de Menús (próximamente)</p>
+                </div>
+            </section>
+
+            <!-- CONTABILIDAD SECTION -->
+            <section id="contabilidad" class="section">
+                <h1>Contabilidad</h1>
+                <div class="section-container">
+                    <p>Sección de Contabilidad (próximamente)</p>
+                </div>
+            </section>
+
+            <!-- AJUSTES SECTION -->
+            <section id="ajustes" class="section">
+                <h1>Ajustes</h1>
+                <div class="section-container">
+                    <p>Sección de Ajustes (próximamente)</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts de Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
     
